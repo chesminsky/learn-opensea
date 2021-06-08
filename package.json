@@ -1,0 +1,23 @@
+{
+  "name": "learn-opensea",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --mode=production",
+    "watch": "webpack --watch --mode=development"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "opensea-js": "^1.1.11",
+    "web3": "^1.3.6"
+  },
+  "devDependencies": {
+    "copy-webpack-plugin": "^5.0.3",
+    "ts-loader": "^6.0.2",
+    "typescript": "^3.5.1",
+    "webpack": "^4.32.2",
+    "webpack-cli": "^3.3.2"
+  }
+}
