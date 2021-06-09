@@ -9,12 +9,19 @@ const seaport = new OpenSeaPort(provider, {
 	networkName: Network.Main
 });
 
-(async function() {
-	const asset: OpenSeaAsset = await seaport.api.getAsset({
-		tokenAddress: '0x06012c8cf97bead5deae237070f9587f8e7a266d', // string
-		tokenId: '1' // string | number | null
+async function search(owner: string) {
+	const assets = await seaport.api.getAssets({
+		owner
 	});
 
-	console.log(asset);
+	const html = assets.assets.map(item => `<li><img src="${item.imageUrl}"/></li>`).join('');
+	document.querySelector('.list').innerHTML = html;
 	
-})();
+}
+// 0x051f458eb3a16c982f6ea3b91ef822a0ad9c3a46
+document.querySelector('#search').addEventListener('click', () => {
+	
+	const owner = (document.querySelector('#owner') as HTMLInputElement).value;
+
+	search(owner);
+})

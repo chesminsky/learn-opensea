@@ -6,10 +6,28 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
 
-    <script src="bundle.js"></script>
-
+    <style>
+        .list {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        li {
+            display: block;
+            list-style: none;
+            padding: 20px;
+        }
+        input {
+            width: 400px;
+        }
+    </style>
 </head>
 <body>
-    test
+    <input type="text" placeholder="user address" id="owner">
+    <button id="search">search</button>
+    <ul class="list">
+
+    </ul>
+
+    <script src="bundle.js"></script>
 </body>
 </html>
